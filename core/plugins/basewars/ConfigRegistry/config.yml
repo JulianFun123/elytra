@@ -1,0 +1,4 @@
+minio:
+  url: "http://host.docker.internal:9000"
+  accessKey: "fullaccessuser"
+  secretKey: "StrongPass123"

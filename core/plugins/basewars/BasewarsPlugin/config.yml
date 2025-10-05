@@ -1,0 +1,148 @@
+spawn:
+  location:
+    x: -73.38867219734072
+    y: -60.0
+    z: -128.62250159180033
+    world: waiting
+    yaw: 179.26003
+    pitch: -3.800634
+lobby:
+  template: waiting
+  spawn:
+    x: -262.6439619530257
+    y: -60.0
+    z: -236.15441784999229
+    world: waiting
+    yaw: 121.73885
+    pitch: 6.0862603
+maps:
+  default:
+    name: Burgen
+    icon: GRASS_BLOCK
+    template: basewars_map_default
+    teams:
+      blue:
+        name: blue
+        color: '#0000FF'
+        icon: BLUE_BANNER
+        spawn:
+          x: 655.3571876417079
+          y: -59.0
+          z: 1319.3849744034333
+          world: ingame_template
+          yaw: -45.948364
+          pitch: 1.515071
+        shop:
+          x: 662.98858336737
+          y: -59.0
+          z: 1313.4251354455885
+          world: ingame_template
+          yaw: 0.09020996
+          pitch: -0.22637224
+        beacon:
+          x: 664.483548449386
+          y: -59.0
+          z: 1333.699999988079
+          world: ingame_template
+          yaw: -1.6469727
+          pitch: 79.66033
+      red:
+        name: red
+        color: '#FF0000'
+        icon: RED_BANNER
+        spawn:
+          x: 935.5325873104393
+          y: -60.0
+          z: 1235.401259815917
+          world: ingame_template
+          yaw: 131.79051
+          pitch: -1.5324205
+        shop:
+          x: 927.973678225382
+          y: -60.0
+          z: 1241.5382903674977
+          world: ingame_template
+          yaw: 179.0262
+          pitch: -0.8794013
+        beacon:
+          x: 926.4524315081492
+          y: -60.0
+          z: 1221.300000011921
+          world: ingame_template
+          yaw: -179.23253
+          pitch: 90.0
+    spawners:
+      iron:
+        '0':
+          x: 899.559821306632
+          y: -60.0
+          z: 1240.5332480705167
+          world: ingame_template
+          yaw: -48.16504
+          pitch: 26.74304
+        '1':
+          x: 682.5476107243858
+          y: -59.0
+          z: 1295.4883248179792
+          world: ingame_template
+          yaw: -41.95813
+          pitch: 35.47286
+      gold:
+        '1':
+          x: 824.5908478696714
+          y: -60.0
+          z: 1252.5326399441126
+          world: ingame_template
+          yaw: -88.42847
+          pitch: 63.226482
+        '0':
+          x: 763.5510328327024
+          y: -60.0
+          z: 1321.4542944824234
+          world: ingame_template
+          yaw: 177.0625
+          pitch: 63.00867
+        '2':
+          x: 879.4244732042876
+          y: -60.0
+          z: 1413.3597929885368
+          world: ingame_template
+          yaw: 162.65643
+          pitch: 63.553055
+        '3':
+          x: 698.4174806559344
+          y: -60.0
+          z: 1217.3483539315716
+          world: ingame_template
+          yaw: 150.578
+          pitch: 67.79771
+        '4':
+          x: 727.5919041741533
+          y: -33.0
+          z: 1111.415755868649
+          world: ingame_template
+          yaw: -42.718872
+          pitch: 51.14504
+      diamond:
+        '0':
+          x: 773.6467676697987
+          y: -59.0
+          z: 1217.4070425224088
+          world: ingame_template
+          yaw: -80.99957
+          pitch: 40.80599
+        '1':
+          x: 878.5131538923387
+          y: -48.0
+          z: 1329.5427013298208
+          world: ingame_template
+          yaw: 89.41229
+          pitch: 47.553436
+    spectator:
+      spawn:
+        x: 833.2921527919366
+        y: -8.743741483310997
+        z: 1278.3892776671237
+        world: ingame_template
+        yaw: -66.40262
+        pitch: 33.730915

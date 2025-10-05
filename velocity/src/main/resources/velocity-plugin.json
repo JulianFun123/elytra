@@ -1,0 +1,11 @@
+{
+  "id": "elytra-velocity",
+  "name": "ElytraVelocity",
+  "version": "${version}",
+  "description": "",
+  "authors": [
+    "Julian"
+  ],
+  "dependencies": [],
+  "main": "ad.julian.elytra.velocity.ElytraVelocityPlugin"
+}
