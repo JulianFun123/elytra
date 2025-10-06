@@ -1,0 +1,34 @@
+---
+templates:
+  - name: "example"
+    dir: "templates/lobby"
+    image: "itzg/minecraft-server"
+    type: "PAPER"
+    version: "1.21.4"
+    port: 25565
+    memory: null
+    environment:
+      MOTD: "A Minecraft Server powered by Inxane Cloud"
+      MAX_PLAYERS: "20"
+    plugins: [ ]
+    files: { }
+    network: "mcserver"
+  - name: "baseraid"
+    dir: "templates/baseraid"
+    image: "itzg/minecraft-server"
+    type: "PAPER"
+    version: "1.21.4"
+    port: 25565
+    memory: null
+    environment:
+      MAX_PLAYERS: "20"
+    plugins: [ ]
+    files: { }
+    network: "mcserver"
+  - name: "build"
+    dir: "templates/build"
+    image: "itzg/minecraft-server"
+    type: "PAPER"
+    version: "1.21.4"
+    port: 25565
+    network: "mcserver"

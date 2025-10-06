@@ -1,0 +1,20 @@
+---
+proxies:
+  - name: "proxy"
+    templateName: "default-proxy"
+    autostart: true
+    portMapping:
+      - 25565:25565
+    groups:
+      - "example"
+      - "baseraid"
+templates:
+  - name: "default-proxy"
+    dir: "proxies/default-proxy"
+    type: "VELOCITY"
+    version: "LATEST"
+    port: 25565
+    memory: 1024
+    environment: { }
+    config: { }
+    network: "mcserver"

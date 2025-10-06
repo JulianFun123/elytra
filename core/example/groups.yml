@@ -1,0 +1,37 @@
+---
+groups:
+  - name: "example"
+    templateName: "example"
+    type: "DYNAMIC"
+    lobby: true
+    labels:
+    lifecycle:
+      scaling:
+        min: 1
+        max: 3
+        checkIntervalSeconds: 5
+      autostart: false
+  - name: "baseraid"
+    templateName: "baseraid"
+    type: "DYNAMIC"
+    labels:
+      type: "basewars"
+      gamemode: "basewars"
+    lobby: false
+    environment:
+      MOTD: "A {{labels.type}} by Inxane Cloud tmpl: {{templateName}}"
+    lifecycle:
+      scaling:
+        min: 1
+        max: 3
+        checkIntervalSeconds: 5
+  - name: "build"
+    templateName: "build"
+    type: "STATIC"
+    labels:
+      type: "build"
+    lobby: false
+    environment:
+      MOTD: "A {{labels.type}} server by Inxane Cloud tmpl: {{templateName}}"
+    lifecycle:
+      autostart: true

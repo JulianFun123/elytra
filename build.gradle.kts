@@ -6,14 +6,14 @@ plugins {
 group = "ad.julian.elytra"
 version = "plugins"
 
-
+version = System.getenv("RELEASE_TAG") ?: "1.0.0-SNAPSHOT"
 
 subprojects {
     apply(plugin = "kotlin")
     apply(plugin = "maven-publish")
 
     group = "ad.julian.elytra"
-    version = "1.0.0-SNAPSHOT"
+    version = rootProject.version // use root project's version
 
     repositories {
         mavenCentral()
@@ -51,7 +51,13 @@ subprojects {
         repositories {
             maven {
                 name = "nexus"
-                url = uri("https://registry.intera.dev/repository/maven-snapshots/")
+
+                url = uri(
+                    if (version.toString().endsWith("-SNAPSHOT"))
+                        "https://registry.intera.dev/repository/maven-snapshots/"
+                    else
+                        "https://registry.intera.dev/repository/maven-releases/"
+                )
 
                 credentials {
                     username = findProperty("nexusUsername") as String? ?: System.getenv("NEXUS_USERNAME")
