@@ -64,3 +64,5 @@ jobs:
           asset_path: ./release-artifacts-${{ env.RELEASE_TAG }}.zip
           asset_name: artifacts-${{ env.RELEASE_TAG }}.zip
           asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
