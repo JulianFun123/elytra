@@ -59,10 +59,10 @@ jobs:
 
       - name: Upload artifacts to GitHub Release
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./release-artifacts-${{ env.RELEASE_TAG }}.zip
           asset_name: artifacts-${{ env.RELEASE_TAG }}.zip
           asset_content_type: application/zip
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
