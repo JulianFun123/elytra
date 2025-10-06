@@ -40,7 +40,9 @@ jobs:
           echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
 
       - name: Build all and publish to Nexus
-        run: ./gradlew buildAll publish --no-configuration-cache
+        run: |
+          chmod +x ./gradlew
+          ./gradlew buildAll publish --no-configuration-cache
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
