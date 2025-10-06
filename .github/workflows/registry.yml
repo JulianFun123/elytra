@@ -39,9 +39,26 @@ jobs:
           TAG_NAME=${GITHUB_REF#refs/tags/}
           echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
 
-      - name: Publish to Nexus
-        run: ./gradlew publish --no-configuration-cache
+      - name: Build all and publish to Nexus
+        run: ./gradlew buildAll publish --no-configuration-cache
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
+
+      - name: Copy release artifacts
+        run: |
+          mkdir -p release
+          cp core/build/libs/*.jar release/
+          #cp node/build/libs/*.jar release/
+          # cp protocol/build/libs/*.jar release/
+          cp velocity/build/libs/*.jar release/
+          zip -r release-artifacts-${{ env.RELEASE_TAG }}.zip release/
+
+      - name: Upload artifacts to GitHub Release
+        uses: actions/upload-release-asset@v2
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./release-artifacts-${{ env.RELEASE_TAG }}.zip
+          asset_name: artifacts-${{ env.RELEASE_TAG }}.zip
+          asset_content_type: application/zip

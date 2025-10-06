@@ -32,5 +32,8 @@ kotlin {
 tasks.register<Copy>("copyPlugin") {
     print("Copying plugin to deployment folder...")
     from(tasks.named("shadowJar"))
+    // With name velocity.jar
+    rename { "velocity-all.jar" }
+
     into(file("${rootDir}/core/src/main/resources/plugins"))
 }

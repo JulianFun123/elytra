@@ -55,6 +55,8 @@ class ElytraVelocityPlugin @Inject constructor(val server: ProxyServer, val logg
             this.server.unregisterServer(server.serverInfo)
         }
 
+        cloudClient!!.onFailure { logger.error(it.message) }
+
         cloudClient!!.onOpen {
             logger.info("Connection to cloud server established!")
             cloudClient!!.send(UpdateProxyStatusPacket(id!!, ServerStatus.RUNNING))
@@ -63,6 +65,10 @@ class ElytraVelocityPlugin @Inject constructor(val server: ProxyServer, val logg
         cloudClient!!.onClosed { _, _ ->
             logger.warn("Connection to cloud server lost!")
             cloudClient!!.connect()
+        }
+
+        cloudClient!!.onPacket { _, packet ->
+            logger.info("Received packet of type ${packet.type}")
         }
 
         cloudClient!!.onPacket(ProxyRegisterServerPacket::class.java) { packet ->
